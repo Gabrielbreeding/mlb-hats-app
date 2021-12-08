@@ -43,15 +43,17 @@ export const getOrders = (id) => (dispatch) => {
 export const checkout = (id, source) => (dispatch) => {
 	axios
 		.post(`/api/order/${id}`, { source })
-		.then((res) =>
+		.then((res) =>{
 			dispatch({
 				type: CHECKOUT,
 				payload: res.data,
 			})
+		}
 		)
+		
 		.catch((err) =>
 			dispatch(returnErrors(err.response.data, err.response.status))
-		);
+		)
 };
 
 export const setOrdersLoading = () => {

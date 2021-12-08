@@ -43,7 +43,7 @@ class AppNavbar extends Component {
                     <NavLink href="/orders">Orders</NavLink>
                 </NavItem>
                 <NavItem>
-                    <Logout/>
+                     <Logout/>
                 </NavItem>
             </Fragment>
         );

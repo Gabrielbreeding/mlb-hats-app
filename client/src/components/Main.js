@@ -4,7 +4,7 @@
 //	multi-route layout with different components
 //	having their own route.
 import { Component } from 'react';
-import AddItem from './AddItem';
+// import AddItem from './AddItem';
 import Home from './Home';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -18,9 +18,9 @@ class Main extends Component {
                     <Route path='/home'>
                         <Home/>
                     </Route>
-                    <Route path='/addItem'>
+                    {/*<Route path='/addItem'>
                         <AddItem/>
-                    </Route>
+                    </Route>*/}
                     <Route path='/cart'>
                         <Cart/>
                     </Route>

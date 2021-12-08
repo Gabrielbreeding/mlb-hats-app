@@ -80,7 +80,7 @@ module.exports.checkout = async (req, res) => {
         const order = await Order.create({
           userId,
           items: cart.items,
-          bill: cart.bill,
+          bill: (cart.bill),
         })
 
         //	Finally, delete the cart using the cartId.

@@ -19,7 +19,6 @@ class Cart extends Component {
     static propTypes = {
         getCart: PropTypes.func.isRequired,
         isAuthenticated: PropTypes.bool,
-        cardError: PropTypes.bool,
         addToCart: PropTypes.func.isRequired,
         deleteFromCart: PropTypes.func.isRequired,
 		updateCart: PropTypes.func.isRequired,
@@ -84,10 +83,10 @@ class Cart extends Component {
                         <div class="col-md-12">
                         <Card>
                             <CardBody>
-                                <CardTitle tag="h5">Total Cost = ${this.props.cart.cart.bill.toFixed(0)}</CardTitle>
+                                <CardTitle tag="h5">Total Cost = ${this.props.cart.cart.bill.toFixed(2)}</CardTitle>
                                 <Checkout
                                     user={user._id}
-                                    amount={this.props.cart.cart.bill}
+                                    amount={this.props.cart.cart.bill.toFixed(2)}
                                     checkout={this.props.checkout}    
                                 />    
                                                

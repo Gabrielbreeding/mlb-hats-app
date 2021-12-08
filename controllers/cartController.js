@@ -80,7 +80,7 @@ module.exports.add_cart_item = async (req, res) => {
         cart.items.push({ productId, name, quantity, price })
       }
 
-      cart.bill += quantity * price
+      cart.bill += quantity * price.toFixed(2)
       cart = await cart.save()
 
       return res.status(201).send(cart)
@@ -92,7 +92,7 @@ module.exports.add_cart_item = async (req, res) => {
       const newCart = await Cart.create({
         userId,
         items: [{ productId, name, quantity, price }],
-        bill: quantity * price,
+        bill: quantity * price.toFixed(2),
       })
 
       return res.status(201).send(newCart)
